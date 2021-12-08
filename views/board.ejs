@@ -19,12 +19,14 @@
                     <th>책번호</th>
                     <th>제목</th>
                     <th>저자</th>
+                    <th>삭제</th>
                 </tr>
                 <% board.forEach(function (value) { %>
                 <tr>
                     <td><%=value.id %></td>
                     <td><%=value.bookname %></td>
                     <td><%=value.author %></td>
+                    <td><a href="/delete/<%= value.id %>">삭제</a></td>
                 </tr>
                     
 

@@ -55,8 +55,7 @@ app.post('/register', (req, res) => {
     
 });
 
-// 게시판
-
+// 책 목록
 app.get('/board',(req, res) => {
     const sql = 'SELECT * FROM board';
     console.log('도서관리시스템 진입');
@@ -66,15 +65,17 @@ app.get('/board',(req, res) => {
     });
 });
 
-// app.get('/board', (req, res)=>{
-//     console.log('도서관리시스템 진입');
-//     var sql = "SELECT * FROM board"
-//     con.query(sql, function (err, rows){
-//         if (err) console.error("err : " +err);
-//         console.log(rows);
-//         res.render('board', {title: '게시판 리스트', rows:rows});
-//     });
-// });
+// 책 목록 삭제
+app.get('/delete/:id', (req, res) => {
+    const sql = 'DELETE FROM board WHERE id = ?';
+    con.query(sql, [req.params.id], function (err, result, fields){
+        if(err) throw err;
+        console.log(result);
+        res.redirect('/board');
+    });
+});
+
+
 
 // 로그인
 app.get('/login',(req,res)=>{
