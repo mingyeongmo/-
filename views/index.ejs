@@ -13,24 +13,25 @@
                 <td><a href="/">Home</a></td>
                 <td><a href="/login">login</a></td>
                 <td><a href="/register">register</a></td>
+                <td><a href="/board">도서관리</a></td>
             </tr>
         </table>
 
         <% }else{ %>
 
+            <div>
+                <h1>Node Mall</h1>
+            </div>
+            <%= name %> 님 환영합니다!
             <table width="30%">
                 <tr>
                     <td><a href="/">Home</a></td>
-                    <td>
-                        <%= name %> 님 환영합니다!
-                    </td>
+                    <td><a href="/board">도서 관리</a></td>
                     <td><a href="/logout">logout</a></td>
                 </tr>
             </table>
             <% } %>
 
-                <div>
-                    <h1>Node Mall</h1>
-                </div>
+                
 </body>
 </html>

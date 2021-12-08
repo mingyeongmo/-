@@ -55,6 +55,27 @@ app.post('/register', (req, res) => {
     
 });
 
+// 게시판
+
+app.get('/board',(req, res) => {
+    const sql = 'SELECT * FROM board';
+    console.log('도서관리시스템 진입');
+    con.query(sql, function(err, result, fields){
+        if(err) throw err;
+        res.render('board', {board: result});
+    });
+});
+
+// app.get('/board', (req, res)=>{
+//     console.log('도서관리시스템 진입');
+//     var sql = "SELECT * FROM board"
+//     con.query(sql, function (err, rows){
+//         if (err) console.error("err : " +err);
+//         console.log(rows);
+//         res.render('board', {title: '게시판 리스트', rows:rows});
+//     });
+// });
+
 // 로그인
 app.get('/login',(req,res)=>{
     console.log('로그인 작동');

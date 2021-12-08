@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+</head>
+<body>
+    <h1>도서관리시스템</h1>
+            <table width="30%">
+                <tr>
+                    <td><a href="/">Home</a></td>
+                    <td><a href="/logout">logout</a></td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>책번호</th>
+                    <th>제목</th>
+                    <th>저자</th>
+                </tr>
+                <% board.forEach(function (value) { %>
+                <tr>
+                    <td><%=value.id %></td>
+                    <td><%=value.bookname %></td>
+                    <td><%=value.author %></td>
+                </tr>
+                    
+
+                    
+                    <% });  %>
+            </table>
+</body>
+</html>
