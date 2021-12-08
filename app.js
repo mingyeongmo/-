@@ -65,6 +65,35 @@ app.get('/board',(req, res) => {
     });
 });
 
+// 책 목록 수정
+app.get('/edit/:id', (req, res) => {
+    console.log("업데이트 전 상태 진입");
+    const sql = 'SELECT * FROM board WHERE id = ?;';
+    con.query(sql, [req.params.id], function (err, result, fields){
+        if(err) throw err;
+        res.render('edit',{board : result});
+    });
+});
+
+app.post('/update/:id', (req, res) => {
+    var id = req.params.id;
+    var bookname = req.body.bookname;
+    var author = req.body.author;
+    var datas = [bookname, author, id];
+    const sql = 'UPDATE board SET bookname = ?, author = ? WHERE id = ?';
+    console.log("hi");
+    con.query(sql, datas, function (err, result, fields){
+        
+        if(err) throw err;
+        console.log(req.body.bookname);
+        console.log(req.body.author);
+        console.log(req.body.id);
+        console.log("hi");
+        res.redirect('/board');
+    });
+    console.log("hi");
+});
+
 // 책 목록 삭제
 app.get('/delete/:id', (req, res) => {
     const sql = 'DELETE FROM board WHERE id = ?';
