@@ -14,18 +14,21 @@
                     <td><a href="/logout">logout</a></td>
                 </tr>
             </table>
-            <table>
-                <tr>
+            <table border="1">
+                <tr style="text-align: center">
                     <th>책번호</th>
                     <th>제목</th>
                     <th>저자</th>
+                    <th>상세보기</th>
+                    <th>수정</th>
                     <th>삭제</th>
                 </tr>
                 <% board.forEach(function (value) { %>
-                <tr>
+                <tr style="text-align: center" >
                     <td><%=value.id %></td>
                     <td><%=value.bookname %></td>
                     <td><%=value.author %></td>
+                    <td><a href="/detail/<%= value.id %>">상세보기</a></td>
                     <td><button><a href="/edit/<%= value.id %>">수정</a></button></td>
                     <td><button><a href="/delete/<%= value.id %>">삭제</a></button></td>
                 </tr>

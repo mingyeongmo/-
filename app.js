@@ -55,6 +55,16 @@ app.post('/register', (req, res) => {
     
 });
 
+// 상세보기
+app.get('/detail/:id',(req,res) => {
+    const sql = "select * from board Left Join authors on board.id = authors.id where board.id=?;"
+    console.log('상세보기 진입');
+    con.query(sql, [req.params.id], function(err, result, fields){
+        if(err) throw err;
+        res.render('detail', {board: result});
+    })
+})
+
 // 책 목록
 app.get('/board',(req, res) => {
     const sql = 'SELECT * FROM board';
