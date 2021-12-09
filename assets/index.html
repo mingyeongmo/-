@@ -6,14 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인/회원가입</title>
 </head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        margin-top: 20vh;
+        background-color: rgb(109, 206, 109);
+    }
+    h1{
+        font-size: 6rem;
+    }
+    button{
+        width: 20vw;
+        height: 7vh;
+        border: solid 0.2px cadetblue;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        background-color: honeydew;
+        margin-bottom: 1vh;
+    }
+    button:hover{
+        width: 21vw;
+        height: 8vh;
+    }
+
+</style>
 <body>
-    <h1>노 드 몰</h1>
-    <h3>회원가입/로그인 구현하기 !! <br>
-        2103 민경모</h3>
+    <h1>Node Mall</h1>
     <table>
         <tr>
-            <td> <button type="button" onclick="window.location.href='/register'">회원가입</button></td>
-            <td> <button type="button" onclick="window.location.href='/login'">로그인</button></td>
+            <button type="button" onclick="window.location.href='/register'">회원가입</button>
+            <button type="button" onclick="window.location.href='/login'">로그인</button>
         </tr>
     </table>
 </body>

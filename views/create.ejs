@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <form action="/create/Enrollment" method="post">
+        <table border="1">
+            <tr>
+                <td>id</td>
+                <td><input type="number" name="id" id="id" required/></td>
+            </tr>
+            <tr>
+                <td>bookname</td>
+                <td><input type="text" name="bookname" id="bookname" required/></td>
+            </tr>
+            <tr>
+                <td>author</td>
+                <td><input type="text" name="author" id="author" required/></td>
+            </tr>
+            <tr>
+                <td>idx</td>
+                <td><input type="number" name="idx" id="idx" required/></td>
+            </tr>
+            <tr>
+                <td>gender</td>
+                <td><input type="text" name="gender" id="gender" required/></td>
+            </tr>
+            <tr>
+                <td>job</td>
+                <td><input type="text" name="job" id="job" required/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">책 등록</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

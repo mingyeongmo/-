@@ -57,7 +57,7 @@ app.post('/register', (req, res) => {
 
 // 상세보기
 app.get('/detail/:id',(req,res) => {
-    const sql = "select * from board Left Join authors on board.id = authors.id where board.id=?;"
+    const sql = "select * from board Left Join authors on board.id = authors.idx where board.id=?;"
     console.log('상세보기 진입');
     con.query(sql, [req.params.id], function(err, result, fields){
         if(err) throw err;
@@ -74,6 +74,42 @@ app.get('/board',(req, res) => {
         res.render('board', {board: result});
     });
 });
+
+
+
+// 책 추가
+app.get('/create/Enrollment', (req, res)=>{
+    console.log("책 추가 진입");
+    res.render('create', {title : "책 추가"});
+});
+
+app.post('/create/Enrollment', (req, res)=>{
+    var id = req.body.id;
+    var bookname = req.body.bookname;
+    var author = req.body.author;
+    var idx = req.body.idx;
+    var gender = req.body.gender;
+    var job = req.body.job;
+    var datas = [parseInt(id), bookname, author];
+    var datas2 = [parseInt(idx), gender, job]
+    // const sql = "INSERT ALL INTO board SET(?,?,?) INTO authors SET(?,?,?)";
+    var sql1 = "INSERT into board values(?,?,?); ";
+    var sql2 = "INSERT into authors values(?,?,?)";
+
+    
+
+    console.log("책 추가 만들기");
+    con.query(sql1, datas, function(err, result, fields){
+        con.query(sql2, datas2, function(err, result, fields){
+            if (err) throw err;
+            res.redirect('/board');
+        })
+        
+    });
+    console.log("책 추가 만들기");
+})
+
+
 
 // 책 목록 수정
 app.get('/edit/:id', (req, res) => {
