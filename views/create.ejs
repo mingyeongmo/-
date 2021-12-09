@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
 </head>
+<style>
+    body{
+        background-color: rgb(109, 206, 109);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input{
+        margin-bottom: 1vh;
+    }
+</style>
 <body>
+    <h1>책 등록</h1>
     <form action="/create/Enrollment" method="post">
-        <table border="1">
+        <table>
             <tr>
                 <td>id</td>
                 <td><input type="number" name="id" id="id" required/></td>
@@ -33,9 +45,9 @@
                 <td>job</td>
                 <td><input type="text" name="job" id="job" required/></td>
             </tr>
-            <tr>
+            <tr style="text-align: right;">
                 <td colspan="2">
-                    <button type="submit">책 등록</button>
+                    <button style=" width: 13.33vh;" type="submit">책 등록</button>
                 </td>
             </tr>
         </table>

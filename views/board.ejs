@@ -6,17 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hi</title>
 </head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(109, 206, 109);
+    }
+    .table{
+        width:50vh;
+        height: 20vh;
+        margin-bottom: 5vh;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .add{
+        width: 10vh;
+        height: 3vh;
+        border: none;
+        background-color: rgb(227, 241, 101);
+    }
+    .thth{
+        color: rgb(240, 225, 225);
+        background-color: rgb(245, 157, 245);
+    }
+    .tdtd{
+        background-color: rgb(125, 236, 255);
+        font-weight: 500;
+    }
+    .btn{
+        width: 4vh;
+        height: 2vh;
+        border: none;
+        color: white;
+    }
+    #btn1{
+        background-color: chartreuse;
+    }
+    #btn2{
+        background-color: crimson;
+    }
+    .table1{
+        margin-left: 15vh;
+    }
+</style>
 <body>
     <h1>도서관리시스템</h1>
-            <table width="30%">
+
+            <table class="table1" width="30%">
                 <tr>
                     <td><a href="/">Home</a></td>
                     <td><a href="/logout">logout</a></td>
                 </tr>
             </table>
-            <input type="button" value="책 추가" onclick="location.href='/create/Enrollment'"> <br>
-            <table border="1">
-                <tr style="text-align: center">
+            <input class="add" type="button" value="책 추가" onclick="location.href='/create/Enrollment'"> <br>
+            <table class="table">
+                <tr class="thth" style="text-align: center">
                     <th>책번호</th>
                     <th>제목</th>
                     <th>저자</th>
@@ -25,13 +72,13 @@
                     <th>삭제</th>
                 </tr>
                 <% board.forEach(function (value) { %>
-                <tr style="text-align: center" >
+                <tr class="tdtd" style="text-align: center" >
                     <td><%=value.id %></td>
                     <td><%=value.bookname %></td>
                     <td><%=value.author %></td>
                     <td><a href="/detail/<%= value.id %>">상세보기</a></td>
-                    <td><button><a href="/edit/<%= value.id %>">수정</a></button></td>
-                    <td><button><a href="/delete/<%= value.id %>">삭제</a></button></td>
+                    <td><button class="btn" id="btn1"><a style="color: rgb(116, 116, 116);" href="/edit/<%= value.id %>">수정</a></button></td>
+                    <td><button class="btn" id="btn2"><a href="/delete/<%= value.id %>">삭제</a></button></td>
                 </tr>
                     
 

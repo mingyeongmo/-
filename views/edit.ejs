@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>책 목록 수정</title>
 </head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(109, 206, 109);    
+    }
+    form{
+        text-align: right;
+    }
+    input{
+        margin-bottom: 1vh;
+    }
+    button{
+        width: 13vh;
+    }
+</style>
+
 <body>
     <h1>책 or 저자 수정</h1>
     <form action="/update/<%=board[0].id %>" method="post">

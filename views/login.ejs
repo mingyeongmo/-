@@ -6,8 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 | 로그인</title>
 </head>
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(109, 206, 109);
+    }
+    h1{
+        margin-left: 4vh;
+    }
+    input{
+        width: 12vh;
+        height: 1.3vh;
+        margin-bottom: 2vh;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.5rem;
+    }
+    form{
+        text-align: right;
+        margin-right: 5vw;
+    }
+    .login{
+        height: 2vh;
+    }
+</style>
 <body>
-    <table width="30%">
+    <table style="margin-left: 8vh;" width="30%">
         <tr>
             <td><a href="/">Home</a></td>
             <td><a href="/login">login</a></td>
@@ -23,7 +51,7 @@
             <input type="text" name="id" required> <br>
             <label>비밀번호</label>
             <input type="password" name="pw" required> <br> <br>
-            <input type="submit" value="로그인">
+            <input class="login" type="submit" value="로그인">
         </form>
     </div>
 </body>

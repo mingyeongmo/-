@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background-color: rgb(109, 206, 109);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 1.5rem;
+    }
+    .table{
+        margin-left: 10vh;
+    }
+</style>
 <body>
     <% if(is_logined==false){ %>
         <table width="30%">
@@ -22,8 +38,8 @@
             <div>
                 <h1>Node Mall</h1>
             </div>
-            <%= name %> 님 환영합니다!
-            <table width="30%">
+            <p><%= name %> 님 환영합니다!</p>
+            <table class="table" width="30%">
                 <tr>
                     <td><a href="/">Home</a></td>
                     <td><a href="/board">도서 관리</a></td>
